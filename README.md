@@ -1,5 +1,5 @@
 Data Structures Project
-This project, titled "Data Structures," provides an interactive and educational overview of common data structures. It's a static HTML page that visually represents and explains the purpose, use cases, and time complexity of several fundamental data structures. The project is created by Desire Vargas for CSE 212, a Data Structures course.
+This project, titled "Data Structures," provides an interactive and educational overview of common data structures. It's a static HTML page that visually represents and explains the purpose, use cases, and time complexity of several fundamental data structures. The project is created by Desire Vargas for CSE 212.
 
 🧐 Purpose
 The goal of this project is to serve as a simple, yet effective reference guide for students learning about data structures. It uses clear visuals and concise explanations to compare and contrast different data structures, making complex concepts easier to grasp. It's an excellent tool for quick study sessions or for refreshing your knowledge on the topic.
