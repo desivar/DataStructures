@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+<style>
+    /* CSS for table and content styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+        vertical-align: top;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    /* Dynamic Array Graphic CSS */
+    .array-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: Arial, sans-serif;
+        margin-top: 50px;
+    }
+    .array-item {
+        width: 60px;
+        height: 60px;
+        border: 2px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #f0f0f0;
+    }
+    .array-index {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .array-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Linked List Graphic CSS */
+    .linked-list-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        font-family: Arial, sans-serif;
+        margin: 50px 0;
+    }
+    .node {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .node-box {
+        display: flex;
+        border: 2px solid #333;
+    }
+    .pointer {
+        width: 30px;
+        height: 30px;
+        border: 2px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #e0e0e0;
+    }
+    .value {
+        width: 60px;
+        height: 30px;
+        border: 2px solid #333;
+        border-left: none;
+        border-right: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+    .arrow {
+        font-size: 30px;
+        color: #333;
+        position: relative;
+    }
+    .arrow.right::after {
+        content: "↔";
+    }
+    
+    /* Stack Graphic CSS */
+    .stack-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid black;
+        width: 100px;
+        margin: 20px auto;
+        padding-top: 5px;
+    }
+    .stack-item {
+        width: 80px;
+        height: 40px;
+        border: 1px solid #333;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    /* Queue Graphic CSS */
+    .queue-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: Arial, sans-serif;
+        margin: 50px 0;
+    }
+    .queue-item {
+        width: 60px;
+        height: 60px;
+        border: 2px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #f0f0f0;
+    }
+    .queue-label {
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+    }
+    .queue-pointer-text {
+        font-size: 12px;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+
+    /* Map Graphic CSS */
+    .map-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        margin: 50px 0;
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+    .map-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+        padding: 5px;
+        border-bottom: 1px dashed #ccc;
+    }
+    .map-key {
+        font-weight: bold;
+        color: #007BFF;
+    }
+    .map-value {
+        color: #28a745;
+    }
+    .map-label {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    /* BST Graphic CSS */
+    .tree-container {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin: 50px 0;
+    }
+    .node-bst {
+        width: 40px;
+        height: 40px;
+        background-color: #f0f0f0;
+        border: 2px solid #333;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin: 5px;
+    }
+    .branch {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+</head>
+<body>
+
+<h1>CSE 212 Data Structure “Cheat Sheet”</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Data Structure</th>
+            <th>Graphic</th>
+            <th>Purpose and Example</th>
+            <th colspan="2">Time Complexity of Common Operations</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Insert</th>
+            <th>Access</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Dynamic Array</td>
+            <td>
+                <div class="array-container">
+                    <div class="array-column">
+                        <div class="array-item">A</div>
+                        <div class="array-index">0</div>
+                    </div>
+                    <div class="array-column">
+                        <div class="array-item">B</div>
+                        <div class="array-index">1</div>
+                    </div>
+                    <div class="array-column">
+                        <div class="array-item">C</div>
+                        <div class="array-index">2</div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                Dynamic arrays are used when you need quick access to elements and the ability to resize the structure dynamically. For instance, in a photo gallery app, a dynamic array could store images that a user adds or deletes from their collection.
+            </td>
+            <td>
+                At the beginning: O(n)<br>
+                At the end: O(1) (amortized)
+            </td>
+            <td>
+                Find by value: O(n)<br>
+                Find by index: O(1)
+            </td>
+        </tr>
+        <tr>
+            <td>Linked List (Doubly-linked)</td>
+            <td>
+                <div class="linked-list-container">
+                    <div class="node">
+                        <div class="node-box">
+                            <div class="pointer"></div>
+                            <div class="value">A</div>
+                            <div class="pointer"></div>
+                        </div>
+                        <div class="arrow right"></div>
+                    </div>
+                    <div class="node">
+                        <div class="node-box">
+                            <div class="pointer"></div>
+                            <div class="value">B</div>
+                            <div class="pointer"></div>
+                        </div>
+                        <div class="arrow right"></div>
+                    </div>
+                    <div class="node">
+                        <div class="node-box">
+                            <div class="pointer"></div>
+                            <div class="value">C</div>
+                            <div class="pointer"></div>
+                        </div>
+                        <div class="arrow right"></div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                Linked lists are used when you need efficient insertions and deletions from the list. For example, a music playlist application might use a linked list to allow users to easily add or remove songs.
+            </td>
+            <td>
+                At the beginning: O(1) <br>
+                At the end: O(1) (with tail pointer)
+            </td>
+            <td>
+                Find by value: O(n) <br>
+                Find by index: O(n)
+            </td>
+        </tr>
+        <tr>
+            <td>Stack</td>
+            <td>
+                <div class="stack-container">
+                    <div class="stack-item">C</div>
+                    <div class="stack-item">B</div>
+                    <div class="stack-item">A</div>
+                </div>
+            </td>
+            <td>
+                Stacks are used when you need to manage data in a last-in, first-out (LIFO) manner. For example, a web browser's back button uses a stack to keep track of the pages you've visited.
+            </td>
+            <td>
+                O(1) (Push operation)
+            </td>
+            <td>
+                O(1) (Pop/Peek operation)
+            </td>
+        </tr>
+        <tr>
+            <td>Queue</td>
+            <td>
+                <div class="queue-container">
+                    <div class="queue-item">A</div>
+                    <div class="queue-item">B</div>
+                    <div class="queue-item">C</div>
+                </div>
+                <div class="queue-label">Front ↑ ↔ Rear ↑</div>
+            </td>
+            <td>
+                Queues are ideal for processing tasks in the order they are received, adhering to a first-in, first-out (FIFO) principle. A great example is a customer support chat system, where incoming chat requests are added to a queue and served in the order they were received.
+            </td>
+            <td>
+                O(1) (Enqueue at rear)
+            </td>
+            <td>
+                O(1) (Dequeue from front)
+            </td>
+        </tr>
+        <tr>
+            <td>Map (Hash-based)</td>
+            <td>
+                <div class="map-container">
+                    <div class="map-label">Map (Key → Value)</div>
+                    <div class="map-item">
+                        <span class="map-key">Product ID</span>
+                        <span>→</span>
+                        <span class="map-value">Details</span>
+                    </div>
+                    <div class="map-item">
+                        <span class="map-key">101</span>
+                        <span>→</span>
+                        <span class="map-value">"Laptop"</span>
+                    </div>
+                    <div class="map-item">
+                        <span class="map-key">102</span>
+                        <span>→</span>
+                        <span class="map-value">"Mouse"</span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                Maps are used to store and retrieve data in key-value pairs. They provide highly efficient lookups by using a unique key to access an associated value. A practical example is a contact list app where a map stores contact names (keys) and their phone numbers (values).
+            </td>
+            <td>
+                O(1)
+            </td>
+            <td>
+                O(1) (by key)
+            </td>
+        </tr>
+        <tr>
+            <td>Balanced BST</td>
+            <td>
+                <div class="tree-container">
+                    <div class="node-bst">D</div>
+                    <div class="branch">
+                        <div class="node-bst">B</div>
+                        <div class="node-bst">F</div>
+                    </div>
+                    <div class="branch">
+                        <div class="node-bst">A</div>
+                        <div class="node-bst">C</div>
+                        <div class="node-bst">E</div>
+                        <div class="node-bst">G</div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                Balanced Binary Search Trees (BSTs) are used for efficiently managing sorted data. They automatically balance themselves to ensure that search, insertion, and deletion operations maintain a logarithmic time complexity. A flight booking system could use a BST to store available seats by seat number, allowing for quick searches.
+            </td>
+            <td>
+                O(log n)
+            </td>
+            <td>
+                O(log n)
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
